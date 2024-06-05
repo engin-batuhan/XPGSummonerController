@@ -1,0 +1,89 @@
+-Static Mode:
+    07 A3 00 01 00 40 FF FF FF White     Full Brightness
+    07 A3 00 01 00 40 00 00 00 Black     Full Brightness
+    07 A3 00 01 00 40 FF 00 00 Red       Full Brightness
+    07 A3 00 01 00 40 00 FF 00 Green     Full Brightness
+    07 A3 00 01 00 40 00 00 FF Blue      Full Brightness
+
+    07 A3 00 01 00 3c FF FF FF      3c 39 36 Brightness
+    07 A3 00 01 00 39 FF FF FF
+    07 A3 00 01 00 36 FF FF FF
+
+
+-Color Cycle Mode: %100 Brightness - Full Speed
+
+    %100 Speed:
+    07 A3 04 01 32 40 00 00 00  # Full brightness
+    07 A3 04 01 32 3c 00 00 00  # 95 brightness
+    07 A3 04 01 32 39 00 00 00  # 90 brightness
+    07 a3 04 01 32 00 00 00 00  # 0 brightness
+
+    %100 Brightness
+    07 A3 04 01 2f 40 00 00 00  # Full Speed
+    07 a3 04 01 2d 40 00 00 00  # 95 speed
+    07 a3 04 01 2a 40 00 00 00  # 90 speed,
+    06 a3 04 01 01 40 00 00 00  # 0 speed
+
+    --Selectable Color and Number of Colors
+
+    %100 Brightness %100 Speed
+
+        2 Numbers:
+        07 a3 04 01 32 40 02    ff 00 00   00 ff 00  # %100 Speed  1. Red 2. Green
+        07 a3 04 01 32 40 02    00 ff 00   ff 00 00  # %100 Speed  1. Red 2. Green
+        07 a3 04 01 32 40 02    ff 00 00   00 00 ff  # %100 Speed  1. Red 2. Blue
+        07 a3 04 01 32 40 02    00 00 ff   ff 00 00  # %100 Speed  1. Blue 2. Red
+
+        07 a3 04 01 01 40 02    00 00 ff   ff 00 00  # %100 Brightness %0   Speed        1. Blue 2. Red
+        07 a3 04 01 32 00 02    00 00 ff   ff 00 00  # %100 Speed      %0   Brightness   1. Blue 2. Red
+
+        3.Numbers +
+        07 a3 04 01 32 40 03    ff 00 00   ff 00 00  ff 00 00  ff 00 00 until 12 ...
+
+-Breathing Mode:
+
+    1 Number %100 Brightness - Full Speed:
+    07 a3 01 01 32 40 01    ff 00 00 # Red
+
+    1 Number %0 Brightness - %0 Speed:
+    07 a3 01 01 01 00 01    ff 00 00 # Red
+
+    1 Number %50 Brightness - %0 Speed:
+    07 a3 01 01 01 20 01    ff 00 00 # Red
+
+    1 Number %50 Brightness - %50 Speed:
+    07 a3 01 01 19 20 01    ff 00 00 # Red
+
+    2 Number %100 Brightness - Full Speed:
+    07 a3 01 01 32 40 01    ff 00 00 ff 00 00  # Red - Red
+    07 a3 01 01 32 40 01    ff 00 00 00 ff 00  # Red - Green
+
+-Reactive
+
+    07 a3 02 01 32 40 01   ff 00 00 # Just 1 Red
+    07 a3 02 01 32 40 05   ff 00 00 ff 00 00 ff 00 00 ff 00 00 ff 00 00 #5 Red
+
+-Rainbow Wave
+    Directions:
+
+    07 a3 05 01 32 40 00 02 00 # 0   Degree
+    07 a3 05 01 32 40 00 01 00 # 90  Degree
+    07 a3 05 01 32 40 00 03 00 # 180 Degree
+    07 a3 05 01 32 40 00 00 00 # 270 Degree
+
+
+    07 a3 05 01 32 40 00 00 00 # 270 Degree - % 100 Brightness - %100 Speed
+    07 a3 05 01 32 00 00 00 00 # 270 Degree - % 0   Brightness - %100 Speed
+    07 a3 05 01 01 00 00 00 00 # 270 Degree - % 0   Brightness - %0   Speed
+
+-Ripple
+    Number of Color 1 : (5 Number)
+
+    07 a3 03 01 32 40 01 00     ff 00 00    # Red
+    07 a3 03 01 01 40 01 00     ff 00 00    # Red 0 Speed
+    07 a3 03 01 01 00 01 00     ff 00 00    # Red 0 Speed 0 Brightness
+
+    07 a3 03 01 01 00 01 00     ff 00 00 ff 00 00 ff 00 00 ff 00 00  ff 00 00 # 5 Red
+
+
+
